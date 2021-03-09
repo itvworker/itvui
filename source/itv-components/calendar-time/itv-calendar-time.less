@@ -1,0 +1,279 @@
+
+
+.itv-calendar-time{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: #fff; // #efefef;
+  .itv-picker-list-mark {
+    width: 14ipx;
+    flex:0 0 auto;
+  }
+  .itv-picker-mark{
+    background: #fff;
+    line-height: 44ipx;
+    font-size: 14ipx;
+  }
+  .itv-calendar-top {
+      height: 44ipx;
+      background-color: #fff;
+      position: relative;
+      overflow: hidden;
+      box-sizing: border-box;
+      &::after {
+        border-bottom: @itv-border-color-base solid 1px;
+        content: ' ';
+        display: block;
+        font-size: 0px;
+        left: 0;
+        right: 0;
+        position: absolute;
+        bottom: 1px;
+        transform: scaleY(0.5) translateY(20%);
+        
+        
+      }
+      font-size: 16ipx;
+      .title {
+        line-height: 44ipx;
+        height: 44ipx;
+      }
+      text-align: center;
+
+      .itv-calendar-cancel-btn{
+        position: absolute;
+        left: 0;
+        height: 100%;
+        top: 0;
+        line-height: 44ipx;
+        padding-left: 15ipx;
+        color:@itv-color-text-sub;
+      }
+      .itv-calendar-sure-btn{
+        position: absolute;
+        right: 0;
+        height: 100%;
+        top: 0;
+        line-height: 44ipx;
+        padding-right: 15ipx;
+        color:@itv-primary-color;
+        
+      }
+  }
+  >.itv-calendar-time-top{
+      background-color:@itv-bg-color-light ;// #fff;
+      display: flex;
+      height: 44ipx;
+      padding-left: 15ipx;
+      padding-right: 16ipx;
+      line-height: 44ipx;
+      font-size: 16ipx;
+      border-bottom: #ddd solid 1px;
+      position: relative;
+      .date{
+        margin-right: 10ipx;
+        padding: 0 10ipx;
+      }
+      .time{
+        padding: 0 10ipx;
+      }
+      .btn-confirm{
+        position: absolute;
+        right: 0;
+        padding-right: 15ipx;
+        padding-right: 15ipx;
+      }
+      .active {
+         color: @itv-primary-color;
+         position: relative;
+         &::after {
+           content: ' ';
+           border-bottom: @itv-primary-color solid 2px;
+           left: 0;
+           right:0;
+           bottom: 0;
+           position: absolute;
+         }
+
+      }
+      
+  }
+
+  .week-bar{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 0px;
+    height: 30ipx;
+    border-bottom: #ddd solid 1.5px;
+    z-index: 10;
+    
+    .week-item{
+      flex: 1;
+      text-align: center;
+      background-color: @itv-bg-color-light;
+      margin-top:1px;
+      height: 30ipx;
+      line-height: 30ipx;
+    }
+  }
+
+  .itv-calendar-time-change{
+    display: flex;
+    flex-direction: row;
+    transform: translateX(0);
+    transition: transform ease .2s;
+    position: relative;
+    background-color: #fff;
+    
+  }
+
+  .itv-select-time {
+    transform: translateX(-100%);
+  }
+}
+.itv-picker-slot-box{
+  width: 100%;
+  flex: 0 0 auto;
+  display: flex;
+  height: 308ipx;
+  background-color: #fff;
+  .itv-calendar-picker{
+     /deep/ .itv-picker-content{
+       overflow: visible;
+     }
+  }
+  &.itv-calendar-only-time {
+    height: 44*5ipx;
+  }
+ 
+}
+.itv-swpier-calendar-time {
+  height:284ipx;
+  flex: 0 0 auto;
+  width: 100%;
+  margin-top: 30ipx;
+ 
+  box-sizing: border-box;
+  overflow: hidden;
+  &.itv-calendar-only-time {
+      height: 44*5ipx;
+      margin-top: 0ipx;
+  }
+  .itv-swpier-calendar{
+    height: 284ipx;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding-top: 10ipx;
+    padding-bottom: 10ipx;
+    position: relative;
+    background-color: #fff;
+    .month-number{
+        position: absolute;
+        
+        z-index: 1;
+        color:@itv-primary-color;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        right: 0;
+       
+        opacity: 0.3;
+        white-space: nowrap;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .year{
+          font-size: 32ipx;
+          position: absolute;
+          left: 50%;
+          top: 20ipx;
+          transform: translateX(-50%);
+        }
+        .month{
+          font-size: 160ipx;
+        }
+
+    }
+    .year-month{
+      width: 100%;
+      text-align: center;
+      background-color: #f1f1f1;
+      line-height: 30ipx;
+      font-size: 14ipx;
+      height: 30ipx;
+      color: #666;
+      display: none;
+    }
+    .day-item{
+    position: relative;
+    z-index: 10;
+      height: 44ipx;
+      width: 100/7%;
+      text-align: center;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .active{
+        width: 30ipx;
+        height: 30ipx;
+        border-radius: 50%;
+        line-height: 30ipx;
+        font-size: 14ipx;
+      }
+
+      &.day-active{
+        .active{
+          background-color: @itv-primary-color;
+          color: @itv-light-color;
+        }
+      }
+      &.forbid {
+        color: #999;
+        .active{
+          background-color: rgba(0, 0, 0, 0);
+          color: #999;
+        }
+      }
+      
+      &.next-month,&.prev-month{
+        opacity: 0;
+      } 
+    } 
+  }
+}
+
+
+.itv-picker-list{
+  width: 20ipx;
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  text-align: center;
+  .itv-picker-indicator{
+    position: absolute;
+    top: 88ipx;
+    width: 100%;
+    height: 44ipx;
+    border-top: 1px solid @itv-border-color-base;
+    border-bottom: 1px solid @itv-border-color-base;
+    z-index: 3; 
+    box-sizing: border-box;
+    line-height: 0px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    &.itv-picker-row5{
+        top: 88ipx;
+    }
+    &.itv-picker-row7{
+        top: 132ipx;
+    }
+  }
+
+}

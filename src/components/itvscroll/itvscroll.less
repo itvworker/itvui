@@ -1,0 +1,57 @@
+.itv-scroll{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    .itv-scroll-content{
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        .itv-scroll-touch {
+            position: relative;
+            width: fit-content;
+            min-width: 100%;
+            .pull-top{
+                position: absolute;
+                height: 50ipx;
+                background-color: #ddd;
+                width: 100%;
+                top: 0;
+                transform: translateY(-100%);
+            }
+        } 
+        
+        .scroller-bar{
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            width: 4ipx;
+            z-index: 99;
+            background-color:rgba(0, 0, 0, 0.1); 
+            .scroll-indoor{
+                border-radius: 4ipx;
+                background-color: rgba(0, 0, 0, 0.3);
+                box-shadow: 0 0 4ipx rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .scroller-barx{
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 4ipx;
+            z-index: 99;
+            background-color:rgba(0, 0, 0, 0.1); 
+            .scroll-indoor{
+                background-color: rgba(0, 0, 0, 0.3);
+                border-radius: 4ipx;
+                box-shadow: 0 0 4ipx rgba(0, 0, 0, 0.3);
+                height: 4ipx;
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+.calendar-week-text {
+    display: flex;
+    padding: 0 10ipx;
+    box-sizing: border-box;
+    .week-text-item {
+        flex: 1;
+        text-align: center;
+    }
+}
+.slide-calendar {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+.calendar-title {
+    text-align: center;
+}
+.calendar-week-text {
+    position: relative;
+}
+.week-slide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: #fff;
+    .week-item {
+        background-color: #fff;
+        .day-item {
+        }
+    }
+    z-index: 10;
+}
+.calendar-box {
+    position: relative;
+    overflow: hidden;
+    .calendar {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.calendar,
+.week-slide {
+    display: flex;
+
+    .month-item,
+    .week-item {
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0 10ipx;
+        box-sizing: border-box;
+        .day-item {
+            width: 14.258%;
+            flex: 0 0 auto;
+            text-align: center;
+            height: 40ipx;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14ipx;
+            color: #333;
+            .active {
+                width: 28ipx;
+                height: 28ipx;
+                border-radius: 18ipx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &.day-active {
+                .active {
+                    color: #fff;
+                    background-color: #e1251b;
+                }
+            }
+            &.prev-month {
+                color: #999;
+            }
+            &.next-month {
+                color: #999;
+            }
+        }
+       
+    }
+    .none-item{
+        .day-item{opacity: 0;}
+    }
+    
+}
+
+.animating {
+    transition: transform 0.3s;
+}
+.slow-action {
+    transition: all 0ms ease 0s;
+}
+.icon-bar {
+    height: 24ipx;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: #eee solid 1px;
+    img {
+        width: 14ipx;
+    }
+    .rotate180 {
+        transform: rotate(180deg);
+    }
+}

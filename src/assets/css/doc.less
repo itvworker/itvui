@@ -1,0 +1,97 @@
+
+
+.doc-page{
+    font-family: Menlo,Menlo Regular,Consolas,monospace;
+    color: #333;
+    padding: 10ipx;
+    font-size: 14ipx;
+    line-height: 180%;
+    padding-bottom: 20ipx;
+    .phone-show{
+        position: fixed;
+        top: 0px;
+        right: 0px;
+        iframe{
+            width: 375px;
+            height: 667px;
+            background-color: #fff;
+            border:#ddd solid 1ipx;
+            border-radius: 6ipx;
+
+        }
+    }
+
+    table{
+        border-spacing: 0;
+        border-collapse: collapse;
+        width: 100%;
+        thead{
+            background-color: #eee;
+            th{
+                border:#ddd solid 1ipx;
+                padding: 10ipx;
+            }
+        }
+        td{
+            border:#ddd solid 1ipx;
+            text-align: center;
+            padding: 10ipx;
+        }
+    }
+    h1{
+        font-size: 28ipx;
+        color: @itv-page-main;
+        font-weight: normal;
+    }
+    h2{
+        font-size: 26ipx;
+        font-weight: 300;
+        color: #999;
+
+
+    }
+    h3 {
+        font-size: 24ipx;
+        font-weight: 200;
+        border-bottom: #ddd solid 1ipx;
+        padding-bottom: 10ipx;
+    }
+    h4{
+        font-size: 20ipx;
+    }
+    h5 {
+        font-size: 18ipx;
+    }
+    h6 {
+        font-size: 16ipx;
+    }
+    .doc-tab{
+        .doc-tab-group{
+            display: flex;
+            border-bottom: #ddd solid 1ipx;
+            font-weight: bold;
+            .tab-item-btn{
+                font-size: 16ipx;
+                padding: 10ipx;
+                cursor: pointer;
+                &.active{
+                    border-bottom:@itv-page-main solid 2ipx;
+                }
+            }
+        }
+        .doc-tab-content{
+            .doc-tab-item{
+                display: none;
+                &:first-child {
+                    display: block;
+                }
+            }
+
+        }
+    }
+}
+
+
+
+
+//

@@ -1,0 +1,235 @@
+/*
+   * dagger-loading-content是整个loading框的样式
+   */
+.dagger-loading-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100rpx;
+    min-height: 100rpx;
+    margin-left: -50rpx;
+    margin-top: -50rpx;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: 20px;
+    z-index: 100;
+}
+
+.mx-loading-disable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 101;
+    display: none;
+}
+
+.dagger-loading-content[data-dpr] {
+    width: 1rem;
+    height: 1rem;
+    margin-left: -0.5rem;
+    margin-top: -0.5rem;
+    border-radius: 0.2rem;
+}
+
+#dagger-loading {
+    position: absolute;
+    top: 20%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+}
+
+/*
+ * circle-back-face和circle-front-face是loading转圈的样式
+ */
+#dagger-loading-pane #circle-back-face {
+    // TODO: 在这里可以改变背景圈圈的颜色;
+    // stroke: #fff;
+}
+#dagger-loading-pane #circle-front-face {
+    stroke-dasharray: 125;
+    stroke-dashoffset: -155;
+    /* // TODO: 这里可以改变前景圈圈的颜色; */
+    stroke: #fff;
+    -webkit-animation: loading-rotate 1s linear infinite;
+    animation: loading-rotate 1s linear infinite;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+}
+
+/*
+ * result-success是成功√的样式
+ */
+#dagger-loading-pane #result-success path {
+    // TODO: 这里可以改变√的颜色;
+    stroke: #484848;
+    stroke-dasharray: 35;
+    stroke-dashoffset: 35;
+}
+/*
+ * result-failure是失败×的样式
+ */
+#dagger-loading-pane #result-failure path {
+    // TODO: 这里可以改变×的颜色;
+    stroke: #484848;
+    stroke-dasharray: 32;
+    stroke-dashoffset: 32;
+}
+
+/*
+ *  成功动画
+ */
+#dagger-loading-pane.success #circle-front-face {
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-animation: dash 0.5s linear;
+    animation: dash 0.5s linear;
+    -webkit-animation-fill-mode: forwards !important;
+    animation-fill-mode: forwards !important;
+}
+#dagger-loading-pane.success #result-success path {
+    stroke: #fff;
+    -webkit-animation: dash-0 0.5s linear;
+    animation: dash-0 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+/*
+ *  失败动画
+ */
+#dagger-loading-pane.failure #circle-front-face {
+    //TODO: 这里可以改变前景圈圈在×状态时的颜色;
+    //stroke: #FC4B4C;
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+    -webkit-animation: dash 0.5s linear;
+    animation: dash 0.5s linear;
+    -webkit-animation-fill-mode: forwards !important;
+    animation-fill-mode: forwards !important;
+}
+#dagger-loading-pane.failure #result-failure path {
+    stroke: #fff;
+    -webkit-animation: dash-0 0.5s linear;
+    animation: dash-0 0.5s linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+.dagger-loading-content.ng-leave {
+    -webkit-animation: fadeOut 0.3s;
+    animation: fadeOut 0.3s;
+}
+
+/*
+ *  status-group 是底部文字组
+ */
+.status-group {
+    position: relative;
+    height: 16px;
+    margin-top: 70%;
+    text-align: center;
+    color: #fff;
+    overflow: hidden;
+}
+
+.status-group p {
+    line-height: 14rpx;
+    font-size: 14rpx;
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 0 !important;
+    -webkit-transform: translate3d(1px, 1px, 1px);
+    transform: translate3d(1px, 1px, 1px);
+}
+.status-group p[data-dpr='2'] {
+    line-height: 28px;
+    font-size: 28px;
+}
+.status-group p[data-dpr='3'] {
+    line-height: 42px;
+    font-size: 42px;
+}
+
+.status-group.complete p {
+    -webkit-animation: move-up 0.2s linear;
+    animation: move-up 0.2s linear;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes loading-rotate {
+    from {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    to {
+        -webkit-transform: rotate(270deg);
+        transform: rotate(270deg);
+    }
+}
+@keyframes loading-rotate {
+    from {
+        transform: rotate(-90deg);
+    }
+    to {
+        transform: rotate(270deg);
+    }
+}
+@-webkit-keyframes dash {
+    0% {
+        stroke-dasharray: 125;
+        stroke-dashoffset: -155;
+    }
+    99% {
+        stroke-dasharray: 125;
+        stroke-dashoffset: -250;
+    }
+    100% {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes dash {
+    0% {
+        stroke-dasharray: 125;
+        stroke-dashoffset: -155;
+    }
+    99% {
+        stroke-dasharray: 125;
+        stroke-dashoffset: -250;
+    }
+    100% {
+        stroke-dasharray: 0;
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes dash-0 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@keyframes dash-0 {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+@-webkit-keyframes move-up {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(0, -99%, 0);
+        transform: translate3d(0, -99%, 0);
+    }
+}
+@keyframes move-up {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        transform: translate3d(0, -99%, 0);
+    }
+}

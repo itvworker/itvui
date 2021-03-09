@@ -1,0 +1,30 @@
+.itv-slivers-box{
+   
+    height: 100%;
+    width: 100%;
+    overflow: hidden;    
+    
+    .itv-sliver-top{
+        background-color: #ddd;
+    }
+    .itv-slivers-scroller{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        .itv-slivers-refresh{
+            transform: translateY(-100%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+        .itv-slivers-group{
+            display: flex;
+            flex: 1;
+            overflow: hidden;
+            flex-wrap: wrap;
+        }
+    }
+    
+}

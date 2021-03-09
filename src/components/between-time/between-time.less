@@ -1,0 +1,112 @@
+
+@import '../swiper/swiper.less';
+.itv-between-time{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: @itv-bg-color-primary; // #efefef;
+  .itv-picker-list-mark {
+    width: 14ipx;
+    flex:0 0 auto;
+  }
+  .itv-picker-mark{
+    background: #fff;
+    line-height: 44ipx;
+    font-size: 14ipx;
+  }
+  >.itv-between-time-top{
+      background-color:@itv-bg-color-light ;// #fff;
+      display: flex;
+      height: 44ipx;
+      padding-left: 15ipx;
+      padding-right: 16ipx;
+      line-height: 44ipx;
+      font-size: 16ipx;
+
+      .date{
+        margin-right: 10ipx;
+
+      }
+  }
+
+  .week-bar{
+    display: flex;
+    .week-item{
+      flex: 1;
+      text-align: center;
+      background-color: @itv-bg-color-light;
+      margin-top:1px;
+      line-height: 24ipx;
+    }
+  }
+
+  .itv-between-time-change{
+    display: flex;
+    flex-direction: row;
+    // transform: translateX(-100%);
+  }
+}
+.itv-picker-slot-box{
+  width: 100%;
+  flex: 0 0 auto;
+  padding-top: 36ipx;
+  display: flex;
+ 
+}
+.itv-swpier-between-time {
+  height:320ipx;
+  flex: 0 0 auto;
+  width: 100%;
+  .itv-swpier-calendar{
+    height: 320ipx;
+    display: flex;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    padding: 10ipx 0;
+    
+    .day-item{
+      height: 50ipx;
+      width: 100/7%;
+      text-align: center;
+      line-height: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .active{
+        width: 40ipx;
+        height: 40ipx;
+        border-radius: 50%;
+        line-height: 40ipx;
+        font-size: 14ipx;
+      }
+
+      &.day-active{
+        .active{
+          background-color: @itv-primary-color;
+          color: @itv-light-color;
+        }
+      }
+      &.next-month,&.prev-month{
+        opacity: 0;
+      }
+      
+    }
+    
+  }
+}
+
+.banner-1{
+  background-color: #eee;
+  
+}
+.banner-2{
+  background-color: #ddd;
+ 
+}
+.banner-2,.banner-1 {
+    height: 300ipx;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  font-size: 50ipx;   
+}

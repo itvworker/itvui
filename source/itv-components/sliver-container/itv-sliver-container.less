@@ -1,0 +1,95 @@
+.itv-slivers-box{
+   
+    height: 100%;
+    width: 100%;
+    overflow: hidden;    
+    
+    .itv-sliver-top{
+        background-color: #ddd;
+        transform-origin:0 0;
+       
+        transition: all 0ms ease 0s;
+        .itv-sliver-top-content{
+            transform-origin:100% 100%;
+            transition: all 0ms ease 0s;
+            font-size: 0;
+        }
+    }
+    .itv-slivers-scroller{
+        height: 100%;
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+        .itv-slivers-refresh{
+            transform: translateY(-100%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+        .itv-slivers-group{
+           flex:0 0 auto;
+           
+            overflow: hidden;
+            flex-wrap: wrap;
+           
+           
+        }
+    }
+    
+}
+
+
+.refresh-content{
+    height: 60ipx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .animate-loading{
+        animation: refreshLoading 1s infinite 0s;
+        overflow: hidden;
+    }
+    .text{
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .arrow {
+        width: 20ipx;
+        height: 20ipx;
+        margin: 8ipx auto 0;
+        transition: transform .2s linear;
+        &.active{
+            transform: rotate(-180deg);
+        }
+    }
+    .spinner{
+        width: 26ipx;
+        height: 26ipx;
+    }
+    .text{
+        line-height: 26ipx;
+    }
+    
+}
+
+@keyframes refreshLoading
+{
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes refreshLoading
+{
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }   
+}

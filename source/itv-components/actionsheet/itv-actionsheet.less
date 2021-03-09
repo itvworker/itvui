@@ -1,0 +1,48 @@
+.itv-bg {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.itv-acitonsheet {
+    position: fixed;
+    bottom: 0;
+    background-color: #eee;
+    z-index: 100;
+    width: 100%;
+    .itv-item {
+        height: 44ipx;
+        display: flex;
+        line-height: 0;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        background-color: #fff;
+        font-size: 16ipx;
+        color: #333;
+        &::after {
+            content: " ";
+            display: block;
+            position: absolute;
+            bottom: 0;
+            border-bottom: #ddd solid 1px;
+            left: 0;
+            right: 0;
+            transform: scaleY(0.5);
+        }
+    }
+    .itv-cancel {
+        margin-top: 5ipx;
+        color: #999;
+        // &::after {
+        //     display: none;
+        // }
+    }
+
+    .ios-screen {
+        // background-color: #fff;
+        height: 34px;
+    }
+}

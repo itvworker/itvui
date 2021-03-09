@@ -1,0 +1,15 @@
+{
+  "name": "pix-components-uploadImage",
+  "version": "1.0.0",
+  "author": "Lanjue",
+  "email": "xieke76@qq.com",
+  "description": "pix components uploadImage",
+  "scripts": {},
+  "main": "index.js",
+  "files": [
+    "styles"
+  ],
+  "license": "MIT",
+  "dependencies": {
+  }
+}

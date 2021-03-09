@@ -1,0 +1,60 @@
+.itv-popup {
+    background-color: #fff;
+    border-radius: 4ipx;
+    width: 260ipx;
+}
+.itv-group-btn {
+    display: flex;
+    height: 44ipx;
+    position: relative;
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 1;
+        font-size: 16ipx;
+        &:active {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+    &:after {
+        border-bottom: #ddd solid 1px;
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        content: "";
+        transform: scaleY(0.5);
+    }
+    .itv-popup-confirm {
+        color: @itv-primary-color;
+    }
+    .itv-popup-cancel {
+        color: #aaa;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: " ";
+            border-right: #ddd solid 1px;
+            transform: scaleX(0.5);
+            right: 0px;
+            top: 0px;
+            bottom: 0px;
+        }
+    }
+}
+.itv-popup-content {
+    padding: 10ipx;
+    h2 {
+        font-weight: normal;
+        text-align: center;
+        padding: 10ipx 0px;
+        margin: 0px;
+        font-weight: 400;
+    }
+    .itv-popup-msg {
+        text-align: center;
+        font-size: 14ipx;
+        padding-bottom: 10ipx;
+        color: #666;
+    }
+}

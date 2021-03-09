@@ -1,0 +1,104 @@
+.itv-picker{
+    background-color: #FFF;
+    width: 100%;
+}
+.itv-picker-control{
+    display: flex;
+    height: 80pt;
+    border-bottom: 1px solid @itv-border-color-white;
+    text-align: center;
+    line-height: 80pt;
+    font-size: 28pt;
+    .itv-picker-cancel-btn,
+    .itv-picker-confirm-btn{
+        width: 120pt;
+        color: @itv-primary-color;
+    }
+    .itv-picker-title{
+        flex: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+}
+.itv-picker-panel{
+    height: 504pt;
+    display: flex;
+    width: 100%;
+}
+
+.itv-picker-list{
+    flex: 1;
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+    text-align: center;
+    .itv-picker-list-panel{
+        transform-style: preserve-3d;
+    }
+    .itv-picker-mask{
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(180deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,.3)),linear-gradient(0deg,hsla(0,0%,100%,.8),hsla(0,0%,100%,.3));
+        background-position: top, bottom;
+        background-size: 100% 108px;
+        background-repeat: no-repeat;
+        z-index: 3;
+    }
+    .itv-picker-indicator{
+        position: absolute;
+        top: 104ipx;
+        width: 100%;
+        height: 44ipx;
+        border-top: 1px solid @itv-border-color-base;
+        border-bottom: 1px solid @itv-border-color-base;
+        z-index: 3; 
+        box-sizing: border-box;
+    }
+
+    .itv-picker-content, .itv-picker-roller{
+        position: absolute;
+        top: 104ipx;
+        width: 100%;
+        height: 44ipx;
+    }
+    .itv-picker-content{
+        background: #FFF;
+        z-index: 2;
+        // overflow: hidden;
+    }
+    .itv-picker-item, .itv-picker-roller-item{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        line-height: 44ipx;
+        color: #333;
+        font-size: @itv-font-size-base;
+        height: 44ipx;
+        text-align: center;
+    }
+    .itv-picker-item{
+        font-size:  @itv-font-size-base;
+        background: #FFF;
+    }
+    .itv-picker-roller{
+        z-index: 1;
+        transform-style: preserve-3d;
+        display: none;
+        .itv-picker-roller-item{
+            backface-visibility: hidden;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            color: #333;
+            height: 44ipx;
+        }
+        .itv-picker-roller-item-hidden {
+            visibility: hidden;
+            opacity: 0;
+        }
+    }
+}

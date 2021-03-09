@@ -1,0 +1,74 @@
+.itv-sliver{
+    width: 100%;
+    flex: 0 0 auto;
+    height: 100%;
+    overflow: hidden;
+           
+    .itv-sliver-scroller{
+        transition: all 0ms ease 0s;
+        position: relative;
+    }
+    .itv-sliver-refresh{
+            transform: translateY(-100%);
+            position: absolute;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+}
+
+
+
+.refresh-content{
+    height: 60ipx;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    .animate-loading{
+        animation: refreshLoading 1s infinite 0s;
+        overflow: hidden;
+    }
+    .text{
+        position: absolute;
+        bottom: 0;
+        text-align: center;
+        width: 100%;
+    }
+    .arrow {
+        width: 20pt;
+        height: 20pt;
+        margin: 8pt auto 0;
+        transition: transform .2s linear;
+        &.active{
+            transform: rotate(-180deg);
+        }
+    }
+    .spinner{
+        width: 26pt;
+        height: 26pt;
+    }
+    .text{
+        line-height: 26pt;
+    }
+    
+}
+
+@keyframes refreshLoading
+{
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes refreshLoading
+{
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }   
+}

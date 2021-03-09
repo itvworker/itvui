@@ -1,0 +1,61 @@
+.itv-bg {
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    z-index: 99;
+}
+.icon {
+    width: 48ipx;
+    height: 48ipx;
+    margin-bottom: 10ipx;
+}
+p {
+    padding: 0px;
+    margin: 0px;
+}
+.itv-toast {
+    transform: translateX(-50%);
+    left: 50%;
+    margin-left: 0 !important;
+    position: fixed;
+    border-radius: 8ipx;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 12ipx 15ipx;
+    color: #fff;
+    min-width: 80ipx;
+    max-width: 100%;
+    text-align: center;
+    font-size: 14ipx;
+    line-height: 22ipx;
+    z-index: 100;
+}
+.itv-toast.itv-toast-top {
+    top: 60ipx;
+}
+.itv-toast.itv-toast-bottom {
+    top: auto;
+    bottom: 60ipx;
+    transform: translateX(-50%);
+}
+.itv-toast.itv-toast-middle {
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+.itv-slide-from-top-enter,
+.itv-slide-from-top-leave-active {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-100%) !important;
+}
+.itv-slide-from-bottom-enter,
+.itv-slide-from-bottom-leave-active {
+    opacity: 0;
+    transform: translateX(-50%) translateY(100%) !important;
+}
+.itv-slide-from-top-enter-active,
+.itv-slide-from-top-leave-active,
+.itv-slide-from-bottom-enter-active,
+.itv-slide-from-bottom-leave-active {
+    transition: all 400ms cubic-bezier(0.36, 0.66, 0.04, 1);
+}

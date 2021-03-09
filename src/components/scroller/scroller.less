@@ -1,0 +1,26 @@
+.itv-scroller{
+    height: 100%;
+    overflow: hidden;
+
+    .itv-scroller-silde{
+        display: flex;
+        height: 100%;
+    }
+}
+
+
+
+
+.itv-scroller-animate{
+    transition: transform 0.2s;
+}
+
+@keyframes rotation {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    }
+}
+

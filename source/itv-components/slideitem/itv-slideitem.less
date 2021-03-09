@@ -1,0 +1,27 @@
+.slide-bar {
+    position: relative;
+    > .slide-bar-content {
+        position: relative;
+        z-index: 10;
+        transition: transform 0.3s;
+    }
+    > .slide-move {
+        transition: transform 0.1s;
+    }
+    > .slide-bar-group-btn {
+        position: absolute;
+        right: 0;
+        height: 100%;
+        top: 0;
+        bottom: 0;
+        display: flex;
+        > .btn {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            padding-left: 11rpx;
+            padding-right: 11rpx;
+            font-size: 14rpx;
+        }
+    }
+}

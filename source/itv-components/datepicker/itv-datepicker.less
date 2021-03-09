@@ -1,0 +1,28 @@
+
+.itv-datepicker{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-color: @itv-bg-color-primary; // #efefef;
+    >.itv-datepicker-top{
+        background-color:@itv-bg-color-light ;// #fff;
+        display: flex;
+        height: 44ipx;
+        padding-left: 15ipx;
+        padding-right: 16ipx;
+        line-height: 44ipx;
+        font-size: 16ipx;
+        >.title{
+            flex: 1;
+            text-align: center;
+        }
+        >.btn-cancel {
+            color: #999;
+            font-size: 14ipx;
+        }
+        >.btn-confirm {
+            color: @itv-primary-color;
+            font-size: 14ipx;
+        }
+    }
+}

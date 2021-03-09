@@ -1,0 +1,350 @@
+@calendar-rowHeight: 45ipx;
+@padding-top: 10ipx;
+.calendar-week-text {
+    display: flex;
+    border-top: @itv-border-color-base solid 1px;
+    border-bottom: @itv-border-color-base solid 1px;
+    box-sizing: border-box;
+    height: 28ipx;
+    font-family: PingFangSC-Regular, PingFang SC,Arial, Helvetica, sans-serif;
+    align-items: center;
+    color: @itv-color-text-base;
+    .week-text-item {
+        flex: 1;
+        text-align: center;
+       
+    }
+    
+}
+.itv-schedule-calendar {
+    width: 100%;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: @itv-bg-color-light;
+    box-shadow: 0px 2ipx 8ipx 0px rgba(0, 0, 0, 0.05);
+    flex: 0 0 auto;
+
+}
+.calendar-title {
+    text-align: center;
+    font-size: @itv-font-size-base;
+    height: 36ipx;
+    line-height: 36ipx;
+}
+.calendar-week-text {
+    position: relative;
+}
+.week-slide {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-color: @itv-bg-color-light;
+    .week-item {
+        background-color: @itv-bg-color-light;
+        padding-top: @padding-top;
+        .day-item {
+           
+            height: @calendar-rowHeight;
+        }
+    }
+    z-index: 10;
+}
+.calendar-box {
+    position: relative;
+    overflow: hidden;
+    min-height: @calendar-rowHeight;
+    padding-top: @padding-top;
+    .calendar {
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+
+.calendar,
+.week-slide {
+    display: flex;
+    align-items:flex-start;
+   
+    .month-item,
+    .week-item {
+        width: 100%;
+        flex: 0 0 auto;
+        display: flex;
+        flex-wrap: wrap;
+     
+        box-sizing: border-box;
+        position: relative;
+        align-content: flex-start;
+       
+        .month-name{
+            position: absolute;
+            font-size: 10ipx;
+            top: -5ipx;
+            left: 5ipx;
+            color: #999;
+
+        }
+        .month-tips{
+            position: absolute;
+            font-size: 150ipx;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 140ipx;
+            z-index: 1;
+            opacity: 0.07;
+            color: @itv-primary-color;
+            font-family: PingFangSC-Light, PingFang SC, Arial, Helvetica, sans-serif;
+        }
+        .year-tips{
+            position: absolute;
+            font-size: 40ipx;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 40ipx;
+            z-index: 1;
+            opacity: 0.07;
+            color: @itv-primary-color;
+            font-family: PingFangSC-Light, PingFang SC, Arial, Helvetica, sans-serif;
+        }
+        .day-item {
+            z-index: 2;
+            width: 14.258%;
+            flex: 0 0 auto;
+            text-align: center;
+            height: @calendar-rowHeight;
+            display: flex;
+            padding-top: 10ipx;
+            box-sizing: border-box;
+           
+            justify-content: center;
+            font-size: @itv-font-size-base;
+            position: relative;
+            z-index: 2;
+            color: #333;
+            .active {
+                width: 28ipx;
+                height: 28ipx;
+                border-radius: 15ipx;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            &.gray {
+                color: #999;
+            }
+            &.day-today {
+                .active {
+                    color: #fff;
+                    background-color: #999;
+                }
+            }    
+            &.day-active {
+                .active {
+                    color: #fff;
+                    background-color: @itv-primary-color;
+                }
+                .tips-word {
+                    background-color: #fff !important;
+                }
+            }
+            &.prev-month {
+                color: #999;
+               
+            }
+            &.opacity-day{
+                opacity: 0;
+            }
+            &.next-month {
+                color: #999;
+            }
+            &.forbid{
+                color: #999;
+                .month-name{
+                    color: #999;
+                }
+            }
+            
+            .worktime{
+                position: absolute;
+                bottom: 12pt;
+                width: 100;
+                text-align: center;
+                font-size: 20pt;
+               
+                color: #999;
+            }
+            .tips-word{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                margin-top: 2ipx;
+                height: 4ipx;
+                width: 4ipx;
+                text-align: center;
+                font-size: 13ipx;
+                line-height: 13*1.3pt;
+                overflow: hidden;
+                border-radius: 3ipx;
+               
+
+            }
+            
+        }
+        
+    }
+    .none-item{
+        .day-item,.month-tips,.month-tips{opacity: 0;}
+    }
+    
+}
+
+.calendar{
+    min-height: @calendar-rowHeight;
+    .calendar-content{
+        position: relative;
+        width: 100%;
+        height: 100%;
+       
+        .month-item{
+            position: absolute;
+            top: 0;
+            width: 100%;
+         
+            &.prev-item-month {
+               left: 0%; 
+            }
+    
+            &.now-item-month {
+                left: 100%; 
+            }
+            &.next-item-month {
+                left: 200%; 
+            } 
+        }
+    }
+    
+}
+
+
+.animating {
+    transition: transform 0.3s;
+    
+}
+.slow-action {
+    transition: all 0ms ease 0s;
+}
+.icon-bar {
+    height: @padding-top;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: #eee solid 1px;
+    
+    img {
+        width: 14pt;
+    }
+    .icon-xiangshang{
+        transform: rotate(180deg);
+        font-size: 40pt;
+        color:@itv-dark-color ;
+    }
+    .rotate180 {
+        
+        transform: rotate(0deg);
+    }
+}
+
+.itv-schedule-scroller{
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    position: relative;
+    
+    .itv-schedule-refresh{
+        position: absolute;
+        top: 0;
+        transform: translateY(-100%);
+        left: 0px;
+        right: 0;
+       
+        text-align: center;
+    }
+}
+
+
+.itv-schedule-scroll{
+    flex: 1;
+    overflow: hidden;
+    position: relative;
+   
+    .scroll-content{
+        position: absolute;
+        width: 100%;
+        top: 0;
+        min-height: 100%;
+    }
+}
+
+.itv-schedule-date{
+    height: 100%;
+    overflow: hidden;
+    
+}
+
+//下拉刷新图标
+
+.refresh-content{
+    height: 60ipx;
+    position: relative;
+    .icon-refresh-bg, .icon-refresh-main{
+        width: 44ipx;
+        height: 44ipx;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 8ipx;
+        // transition: all 300ms ease-in;
+        z-index: 0;
+        img {
+            width: 44ipx;
+            height: 44ipx;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
+    .icon-refresh-main {
+        z-index: 2;
+        height: 0ipx;
+        overflow: hidden;
+        height: 0ipx;
+    }
+    .animate-loading{
+        animation: refreshLoading 1s infinite 0s;
+    }
+}
+
+@keyframes refreshLoading
+{
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@-webkit-keyframes refreshLoading
+{
+    from {
+        height: 0%;
+    }
+    to {
+        height: 100%;
+    }   
+}
